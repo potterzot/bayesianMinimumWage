@@ -1,0 +1,45 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## The Minimum Wage
+
+This is the github repository for exploratory work on the minimum wage that may develop into a paper. The idea is to consider two possibilities:
+
+1. Whether using a bayesian/machine learning model to predict a counterfactual contributes anything of interest.
+
+2. Whether a matching algorithm and bayesian statistical approach yields any new insights.
+
+For now, please cite this repository as:
+
+>  Potter, Nicholas. "Bayesian Inference: Insights into the Impacts of Minimum Wage Policies". Working Paper. 2017. Available: http://www.github.com/potterzot/paper-bayesian-minwage.
+
+## Requirements
+Some specific software (in addition to R, devtools, and some more common R packages) will help to recreate the results for this paper from scratch. The easiest thing would be to install the [rClimateImpact](https://github.com/potterzot/climate-impact/tree/master/rClimateImpact) package, which will ensure that you have all the R software needed to download, process, and analyze the data. If you don't want to do that, you can instead install the following:
+
+**To download raw data:**
+* [rnassqs](https://github.com/potterzot/rnassqs)
+* [censusapi](https://github.com/hrecht/censusapi)
+
+**To run the analysis:**
+
+
+## How to use this repository
+There are a few different ways you may want to use this repository:
+
+1. To reproduce or examine work and results from the paper.
+2. As a base to expand on the research contained herein. If so you may want to just fork the repository and continue on. Contributions to this repository are also welcome! Please follow the contribution guidelines and submit a pull request when ready.
+3. As a framework for a [reproducible research]() project. In that case a better alternative might be my [research-template](github.com/potterzot/research-template), which provides a skeleton with some thoughts about the best use. There are several other (and probably better) attempts at this, including [rrrpkg](https://github.com/ropensci/rrrpkg), [projecttemplate](http://projecttemplate.net/), and [cboettig's template](https://github.com/cboettig/template).
+3. Use it to access the data used in the project. I haven't worked this out yet, but to the extent possible all data will be made available.
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
