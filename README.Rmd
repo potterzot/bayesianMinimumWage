@@ -6,7 +6,7 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## The Minimum Wage
+## A Bayesian Approach to the Minimum Wage
 
 This is the github repository for exploratory work on the minimum wage that may develop into a paper. The idea is to consider two possibilities:
 
