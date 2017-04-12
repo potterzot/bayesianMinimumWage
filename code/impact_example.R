@@ -1,13 +1,17 @@
 # Example estimation of impact
 
+
+library(tidyr)
 library(bsts)
 library(CausalImpact)
 
-#dates
-dates <- seq.Date(from = as.Date("2000-01-01"), to = as.Date("2015-12-01"), by="month")
+#dates - needed for time series
+dates <- seq.Date(from = as.Date("1990-01-01"), to = as.Date("2016-12-01"), by="quarter")
 
-#read in the BLS data
-df <- read_csv("data/bls.csv")
+#read in the QCEW data
+df <- read_csv("data/out/qcew/emp.csv")
+
+
 
 #synthetic data
 df <- data.frame(

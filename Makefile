@@ -1,9 +1,10 @@
-all: clean_all data_all doc test paper readme
+all: clean_all data_all test output
 
-#CLEANING
-#remove any intermediate files
+#CLEAN
+#remove any output (non-data) files
 clean:
 	rm -f README.md
+	rm -f output/*
 
 #remove all intermediate files, including data
 clean_data:
@@ -14,32 +15,25 @@ clean_all: clean clean_data
 #DATA
 #generate new data without downloading new data
 data_get: clean_data
-	Rscript code/get_nass_qs.R all
-	Rscript code/get_census.R all
-	Rscript code/get_county_centroids.R
+	Rscript code/get_qcew.R
 
 data:
-	Rscript code/clean_nass.R
-	Rscript code/clean_census.R
-	Rscript code/combine_county_variables.R
+	Rscript code/proc_qcew.R
 
 data_all: data_get data
 
 #TESTS
 test:
 
-#DOCUMENTATION
-#document the package
-doc:
-	cd rpkg; R -e 'devtools::document()'
-
-
+#OUTPUT
 #Project README
 readme: README.Rmd
 	R -e "rmarkdown::render('$(<F)')"
 
-#OUTPUT
 #Generate the paper
 paper: output/paper.Rmd output/library.bib output/chicago-author-date.csl
 	cd $(<D); R -e "rmarkdown::render('$(<F)', 'all')"
+
+#Generate all the output files
+output: paper readme
 
