@@ -22,8 +22,7 @@ For now, please cite this repository as:
 Specific R packages needed to run code in this repository include:
 
 * RCurl
-* tidyr
-* dplyr
+* data.table
 * [blsAPI](https://github.com/mikeasilva/blsAPI)
 * [assertthat](https://github.com/hadley/assertthat)
 * [CausalImpact](https://github.com/google/CausalImpact)
@@ -31,7 +30,7 @@ Specific R packages needed to run code in this repository include:
 To install all needed packages, you can copy and paste this code into RStudio:
 
 ```
-install.packages(c("RCurl", "tidyr", "dplyr"))
+install.packages(c("RCurl", "data.table"))
 devtools::install_github("mikeasilva/blsAPI")
 devtools::install_github("hadley/assertthat")
 devtools::install_github("google/CausalImpact")
