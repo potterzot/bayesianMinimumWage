@@ -18,12 +18,17 @@ Requirements
 Specific R packages needed to run code in this repository include:
 
 -   RCurl
+-   data.table
+-   [blsAPI](https://github.com/mikeasilva/blsAPI)
 -   [assertthat](https://github.com/hadley/assertthat)
+-   [CausalImpact](https://github.com/google/CausalImpact)
 
 To install all needed packages, you can copy and paste this code into RStudio:
 
-    install.packages(c("RCurl"))
+    install.packages(c("RCurl", "data.table"))
+    devtools::install_github("mikeasilva/blsAPI")
     devtools::install_github("hadley/assertthat")
+    devtools::install_github("google/CausalImpact")
 
 How to use this repository
 --------------------------
