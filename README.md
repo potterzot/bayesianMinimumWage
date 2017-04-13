@@ -8,6 +8,10 @@ This is the github repository for exploratory work on the minimum wage that may 
 
 2.  Whether a matching algorithm and bayesian statistical approach yields any new insights.
 
+Santa Fe increased it's minimum wage from $5.15 to $8.50 in June 2004. Using a very basic model to predict the counterfactual and ignoring the subsequent minimum wage increases, the effect is rather startling:
+
+![Naive estimate of the impact of Santa Fe $8.50 minimum wage on food services employment.](output/figures/qcew_impact.png)
+
 For now, please cite this repository as:
 
 > Potter, Nicholas. "Bayesian Inference: Insights into the Impacts of Minimum Wage Policies". Working Paper. 2017. Available: <http://www.github.com/potterzot/paper-bayesian-minwage>.

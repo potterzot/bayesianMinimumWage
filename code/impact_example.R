@@ -11,8 +11,8 @@ dt <- fread("data/out/qcew/emp.csv", stringsAsFactors = FALSE)
 dt_final <- dcast(dt, year + qtr ~ area_fips + industry_code, value.var = (names(dt)[5:8]))
 
 #dates - needed for time series
-pre_period <- as.Date(c("1990-01-01", "2006-06-01"))
-post_period <- as.Date(c("2006-07-01", "2015-12-01"))
+pre_period <- as.Date(c("1990-01-01", "2004-06-01"))
+post_period <- as.Date(c("2004-07-01", "2015-12-01"))
 dates <- seq.Date(from = as.Date("1990-01-01"), to = as.Date("2015-12-01"), by="quarter")
 nrows <- length(dates)
 pre_periods <- length(dates[dates >= pre_period[1] & dates <= pre_period[2]])
@@ -38,8 +38,14 @@ data <- zoo(cbind(Y, X), dates)
 
 #now determine the impact 
 impact <- CausalImpact(data, pre_period, post_period, model.args = list(nseasons = 4, season.duration = 1))
-plot(impact)
+p <- plot(impact)
+p
 summary(impact)
+
+#Save the plot file
+png(filename = "output/figures/qcew_impact.png")
+p
+dev.off()
 
 ####
 # But maybe we want to specify our own prediction model
