@@ -21,25 +21,43 @@ This is the github repository for exploratory work on the minimum wage that may 
 
 2. Whether a matching algorithm and bayesian statistical approach yields any new insights.
 
+<<<<<<< HEAD
 You can cite this repository as:
+=======
+Santa Fe increased it's minimum wage from \$5.15 to \$8.50 in June 2004. Using a very basic model to predict the counterfactual and ignoring the subsequent minimum wage increases, the effect is rather startling:
+
+![Naive estimate of the impact of Santa Fe $8.50 minimum wage on food services employment.](output/figures/qcew_impact.png)
+
+
+For now, please cite this repository as:
+>>>>>>> f3dd674ddfdfdf2dc521f4153f56a64821114292
 
 >  Potter, Nicholas A. "Bayesian Inference: Insights into the Impacts of Minimum Wage Policies". Working Paper. 2017. Available: http://www.github.com/potterzot/bayesian-minwage.
 
 ## Requirements
 Specific R packages needed to run code in this repository include:
 
+<<<<<<< HEAD
 * [RCurl](https://cran.r-project.org/web/packages/RCurl/index.html)
 * [data.table](https://cran.r-project.org/web/packages/data.table/index.html)
 * [bsts](https://cran.r-project.org/web/packages/bsts/index.html)
 * [blsAPI](https://github.com/mikeasilva/blsAPI)
+=======
+* RCurl
+* data.table
+>>>>>>> f3dd674ddfdfdf2dc521f4153f56a64821114292
 * [assertthat](https://github.com/hadley/assertthat)
 * [CausalImpact](https://github.com/google/CausalImpact)
 
 To install all needed packages, you can copy and paste this code into RStudio:
 
 ```
+<<<<<<< HEAD
 install.packages(c("RCurl", "data.table", "bsts"))
 devtools::install_github("mikeasilva/blsAPI")
+=======
+install.packages(c("RCurl", "data.table"))
+>>>>>>> f3dd674ddfdfdf2dc521f4153f56a64821114292
 devtools::install_github("hadley/assertthat")
 devtools::install_github("google/CausalImpact")
 ```

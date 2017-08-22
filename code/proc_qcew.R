@@ -69,7 +69,7 @@ tmp_df$emp <- rowMeans(tmp_df[, emp_cols, with=F])
 
 # * Subset and Save
 dir.create("data/out/qcew", recursive = TRUE)
-keep_cols <- c("area_fips", "industry_code", "year", "qtr", "qtrly_estabs_count", "month1_emplvl", "month2_emplvl", "month3_emplvl", "total_qtrly_wages", "taxable_qtrly_wages", "avg_wkly_wage")
+keep_cols <- c("area_fips", "industry_code", "year", "qtr", "qtrly_estabs_count", "month1_emplvl", "month2_emplvl", "month3_emplvl", "total_qtrly_wages", "avg_wkly_wage")
 
 write.csv(tmp_df[, c(setdiff(keep_cols, emp_cols), "emp"), with=F], "data/out/qcew/emp.csv", row.names = FALSE)
 
