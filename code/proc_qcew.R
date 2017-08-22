@@ -46,10 +46,13 @@ lapply(years, function(y) {
 
 
 # * Read and merge data
+
+# need to define column types so no errors on rbind 
 col_classes <- c(rep("character", 13), rep("numeric", 8), "character", rep("numeric", 8), "character", rep("numeric", 16))
+
 csv_list <- list.files(path="data/proc/qcew", pattern="*.csv", full.names = TRUE)
 data_raw <- rbindlist(lapply(csv_list, fread, colClasses = col_classes))
-setkey(data_raw, area_fips, own_code, industry_code, year, qtr)
+setkey(data_raw, year, qtr)
 
 #############
 # * Tidy data

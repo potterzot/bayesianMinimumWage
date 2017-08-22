@@ -31,7 +31,7 @@ sf_emp_retail <- df$sf_emp_private * (0.1 + (rnorm(1, 0, 0.1))^2) * c(rep(1,pre_
 data <- zoo(cbind(sf_emp_retail, df[, 2:ncol(df)]), dates)
 
 #now determine the impact 
-impact <- CausalImpact(data, pre_period, post_period, model.args = list(nseasons = 4, season.duration = 3))
+impact <- CausalImpact(data, pre_period, post_period, model.args = list(nseasons = 4, season.duration = 1))
 plot(impact)
 summary(impact)
 
@@ -43,8 +43,8 @@ post_period_response <- sf_emp_retail[df$date >= as.Date("2006-07-01")]
 sf_emp_retail[df$date >= as.Date("2006-07-01")] <- NA
 
 # create our own model
-ss <- AddLocalLevel(list(), sf_emp_retail)
-ss <- AddLocalLinearTrend(ss, data$sf_emp_private)
+ss <- AddLocal(list(), sf_emp_retail)
+ss <- AddLocalLinearTrend(list(), data$sf_emp_private)
 ss <- AddSeasonal(ss, sf_emp_retail, nseasons = 4)
 
 bsts_model <- bsts(sf_emp_retail ~ data, ss, niter = 1000)

@@ -8,21 +8,29 @@ output:
 
 ## A Bayesian Approach to the Minimum Wage
 
+### Ideas
+
+* compare with more traditional AR approach
+* loo (STAN model evaluation)
+* Look at parameter convergence
+
+
 This is the github repository for exploratory work on the minimum wage that may develop into a paper. The idea is to consider two possibilities:
 
 1. Whether using a bayesian/machine learning model to predict a counterfactual contributes anything of interest.
 
 2. Whether a matching algorithm and bayesian statistical approach yields any new insights.
 
-For now, please cite this repository as:
+You can cite this repository as:
 
->  Potter, Nicholas. "Bayesian Inference: Insights into the Impacts of Minimum Wage Policies". Working Paper. 2017. Available: http://www.github.com/potterzot/paper-bayesian-minwage.
+>  Potter, Nicholas A. "Bayesian Inference: Insights into the Impacts of Minimum Wage Policies". Working Paper. 2017. Available: http://www.github.com/potterzot/bayesian-minwage.
 
 ## Requirements
 Specific R packages needed to run code in this repository include:
 
-* RCurl
-* data.table
+* [RCurl](https://cran.r-project.org/web/packages/RCurl/index.html)
+* [data.table](https://cran.r-project.org/web/packages/data.table/index.html)
+* [bsts](https://cran.r-project.org/web/packages/bsts/index.html)
 * [blsAPI](https://github.com/mikeasilva/blsAPI)
 * [assertthat](https://github.com/hadley/assertthat)
 * [CausalImpact](https://github.com/google/CausalImpact)
@@ -30,7 +38,7 @@ Specific R packages needed to run code in this repository include:
 To install all needed packages, you can copy and paste this code into RStudio:
 
 ```
-install.packages(c("RCurl", "data.table"))
+install.packages(c("RCurl", "data.table", "bsts"))
 devtools::install_github("mikeasilva/blsAPI")
 devtools::install_github("hadley/assertthat")
 devtools::install_github("google/CausalImpact")
